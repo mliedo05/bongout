@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'payments/index'
+  resources :payment_methods
   resources :carts
   resources :orders
   devise_for :users, controllers: {
