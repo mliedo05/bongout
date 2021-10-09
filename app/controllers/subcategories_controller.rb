@@ -13,6 +13,7 @@ class SubcategoriesController < ApplicationController
   # GET /subcategories/new
   def new
     @subcategory = Subcategory.new
+    @categories= Category.pluck :name, :id
   end
 
   # GET /subcategories/1/edit

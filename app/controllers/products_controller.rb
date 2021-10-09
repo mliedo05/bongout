@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :set_product, only: %i[ show  ]
+  before_action :prueba, only: %i[ new create edit update destroy ]
+
 
   # GET /products or /products.json
   def index

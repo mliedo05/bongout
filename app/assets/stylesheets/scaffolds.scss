@@ -1,7 +1,7 @@
 body {
   background-color: #fff;
   color: #333;
-  margin: 33px;
+
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -18,18 +18,11 @@ pre {
   padding: 10px;
   font-size: 11px;
 }
-
-a {
-  color: #000;
-
-  &:visited {
-    color: #666;
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
+#instagram{
+  background: #833ab4;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  border-radius: 50%;
 }
 
 th {
@@ -38,6 +31,12 @@ th {
 
 td {
   padding: 0 5px 7px;
+}
+
+#logo {
+  margin:auto;
+  padding: auto;
+
 }
 
 div {
@@ -81,4 +80,7 @@ div {
 
 label {
   display: block;
+}
+.footer{
+  text-align: center;
 }
