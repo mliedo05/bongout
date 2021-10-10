@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :orders
   devise_for :users, controllers: {
     sessions: 'users/sessions',
+    registrations: 'users/registrations',
   }
   resources :products
   resources :brands
