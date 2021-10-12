@@ -21,18 +21,14 @@ class CartsController < ApplicationController
 
   # POST /carts or /carts.json
   def create
-    @cart = Cart.new(cart_params)
-
-    respond_to do |format|
-      if @cart.save
-        format.html { redirect_to @cart, notice: "Cart was successfully created." }
-        format.json { render :show, status: :created, location: @cart }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @cart.errors, status: :unprocessable_entity }
-      end
+        cart = current_order.cart.new(product_id: params[:product_id])
+        if cart.save
+            redirect_to root_path, notice: "Has añadido un articulo al carro de compras"
+          else
+           redirect_to product_path(params[:product_id]), alert: "Error al agregar al carrito"
+          end
+        end
     end
-  end
 
   # PATCH/PUT /carts/1 or /carts/1.json
   def update
@@ -65,5 +61,10 @@ class CartsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def cart_params
       params.require(:cart).permit(:quantity, :order_id, :product_id)
+    end
+
+    def current_order
+      order = Order.where(user_id: current_user.id, status: 0).order(updated_at: :desc).first
+      Order.create(user_id: current_user.id) unless order
     end
 end

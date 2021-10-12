@@ -15,6 +15,8 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    @subcategories= Subcategory.pluck :name, :id
+    @brands= Brand.pluck :name, :id
   end
 
   # GET /products/1/edit

@@ -44,6 +44,6 @@
   <strong>Brand:</strong>
   <%= @product.brand %>
 </p>
-
+<%# <%= link_to 'Add to cart', carts_path(product_id: params[:id], method: :post) %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

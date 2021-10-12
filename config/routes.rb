@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'payments/index'
   resources :payment_methods
-  resources :carts
+  resources :carts, only: [:create]
   resources :orders
   devise_for :users, controllers: {
     sessions: 'users/sessions',
