@@ -5,7 +5,7 @@
     <div  class="ml-auto mr-2" >
         <% if user_signed_in? %>
 
-            <%= link_to (new_user_session_path), method: :post do %>
+            <%= link_to (cart_path(@order)) do %>
               <i class="fas fa-shopping-cart fa-2x text-light mr-2"></i><% end %>
 
             <%= link_to (edit_user_registration_path) do %>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'payments/index'
   resources :payment_methods
-  resources :carts, only: [:create]
+  resources :carts, only: [:update, :show]
   resources :orders
   devise_for :users, controllers: {
     sessions: 'users/sessions',
