@@ -3,5 +3,5 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable
   
   validates :name, :lastname, :phone, presence: true
-  
+  ratyrate_rater
 end

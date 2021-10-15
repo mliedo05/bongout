@@ -4,10 +4,10 @@
     </div>
     <div  class="ml-auto mr-2" >
         <% if user_signed_in? %>
-
+          <% if @order.present? %>
             <%= link_to (cart_path(@order)) do %>
               <i class="fas fa-shopping-cart fa-2x text-light mr-2"></i><% end %>
-
+          <% end %>
             <%= link_to (edit_user_registration_path) do %>
               <i class="fas fa-user-cog fa-2x text-light mr-2"></i><% end %>
 
