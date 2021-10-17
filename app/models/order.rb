@@ -13,4 +13,12 @@ class Order < ApplicationRecord
     carts.create(product_id: product_id, quantity: quantity, price: product.price)
     end
   end
+
+  def compute_total
+    sum = 0
+    carts.each do |item|
+      sum += item.price
+    end
+    update_attribute(:total, sum)
+  end
 end

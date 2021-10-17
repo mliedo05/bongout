@@ -1,16 +1,9 @@
 class CartsController < ApplicationController
-
+  before_action :set_cart, only: %i[ destroy  ]
 
   # GET /carts/1 or /carts/1.json
   def show
     @order = current_order
-  end
-
-  # GET /carts/new
-
-
-  # GET /carts/1/edit
-  def edit
   end
 
   # POST /carts or /carts.json
@@ -28,7 +21,7 @@ class CartsController < ApplicationController
   def destroy
     @cart.destroy
     respond_to do |format|
-      format.html { redirect_to carts_url, notice: "Cart was successfully destroyed." }
+      format.html { redirect_to cart_url, notice: "Your cart is now updated" }
       format.json { head :no_content }
     end
   end

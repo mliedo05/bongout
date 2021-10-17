@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  get 'home/index'
   post '/rate' => 'rater#create', :as => 'rate'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'payments/index'
   resources :payment_methods
-  resources :carts, only: [:update, :show]
+  resources :carts, only: [:update, :show, :destroy]
   resources :orders
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -14,6 +15,6 @@ Rails.application.routes.draw do
   resources :brands
   resources :subcategories
   resources :categories
-  root to: "products#index"
+  root to: "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
