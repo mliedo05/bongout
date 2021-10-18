@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[ show  ]
+  before_action :set_product, only: %i[ show destroy ]
   before_action :prueba, only: %i[ new create edit update destroy ]
 
 
@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
   # POST /products or /products.json
   def create
     @product = Product.new(product_params)
-
+    byebug
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: "Product was successfully created." }

@@ -3,7 +3,7 @@
         <% @products.each do |product| %>
             <div class="card">
                 <%= link_to (product_path(product)) do %>
-                 <img src="<%= product.image %>" class="card-img-top" alt="...">
+                  <%= image_tag product.image %>
                 <% end %>
                 <div class="card-body">
                     <h5 class="card-title"><%= product.name %></h5>
