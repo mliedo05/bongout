@@ -9,7 +9,9 @@ body {
   display: flex;
   flex-direction: column;
 }
-
+a{
+  padding: 0;
+}
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
