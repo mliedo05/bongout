@@ -2,7 +2,9 @@
     <div class="row">
         <% @products.each do |product| %>
             <div class="card">
-                <img src="<%= product.image %>" class="card-img-top" alt="...">
+                <%= link_to (product_path(product)) do %>
+                 <img src="<%= product.image %>" class="card-img-top" alt="...">
+                <% end %>
                 <div class="card-body">
                     <h5 class="card-title"><%= product.name %></h5>
                     <p class="card-text"><%= product.description %></p>
