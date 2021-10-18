@@ -6,6 +6,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><%= product.name %></h5>
                     <p class="card-text"><%= product.description %></p>
+                    <p class="card-text"><%= product.price %></p>
                     <% if user_signed_in? %>
                         <%= form_for :cart, url: cart_path(product), method: :put do |f| %>
                         <%= f.hidden_field :product_id, value: product.id %>
@@ -16,5 +17,11 @@
                 </div>
             </div>
         <% end %>
+    </div>
+</div>
+
+<div class="row ">
+    <div class="col-md-8 offset-md-2 mx-2 my-5 ">
+      <%= paginate @products, class:'btn btn-danger mx-2'  %>
     </div>
 </div>

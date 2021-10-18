@@ -19,6 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem "image_processing", ">= 1.2"
 gem 'ratyrate'
 gem 'jquery-rails'
+gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
