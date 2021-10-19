@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- .cuadro{
+.cuadro{
      width: 100px;
      height: 100px;
      padding: 0 ;
