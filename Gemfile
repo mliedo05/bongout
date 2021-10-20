@@ -20,6 +20,8 @@ gem "image_processing", ">= 1.2"
 gem 'ratyrate'
 gem 'jquery-rails'
 gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
+gem 'omniauth-facebook'
+
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
