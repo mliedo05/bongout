@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!
   def index
     @products = Product.all.order("created_at DESC")
     if current_user
