@@ -21,6 +21,8 @@ gem 'ratyrate'
 gem 'jquery-rails'
 gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
 gem 'omniauth-facebook'
+#Autenticacion con google
+gem 'omniauth-google-oauth2'
 
 
 # Use CoffeeScript for .coffee assets and views
