@@ -23,6 +23,8 @@ gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
 gem 'omniauth-facebook'
 #Autenticacion con google
 gem 'omniauth-google-oauth2'
+#Metodos de pago
+
 
 
 # Use CoffeeScript for .coffee assets and views
