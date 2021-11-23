@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'payments/index'
   resources :payment_methods
-  resources :carts, only: [:update, :show, :destroy]
+  resources :carts, only: [:update, :show, :destroy] do
+    member do
+      post :pay_with_paypal
+      get :process_paypal_payment
+    end
+  end
   resources :orders
   devise_for :users, controllers: {
     sessions: 'users/sessions',

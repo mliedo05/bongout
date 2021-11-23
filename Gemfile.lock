@@ -53,6 +53,11 @@ GEM
     activejob (5.2.6)
       activesupport (= 5.2.6)
       globalid (>= 0.3.6)
+    activemerchant (1.124.0)
+      activesupport (>= 4.2)
+      builder (>= 2.1.2, < 4.0.0)
+      i18n (>= 0.6.9)
+      nokogiri (~> 1.4)
     activemodel (5.2.6)
       activesupport (= 5.2.6)
     activerecord (5.2.6)
@@ -256,6 +261,7 @@ GEM
       ffi (~> 1.12)
     ruby2_keywords (0.0.5)
     ruby_dep (1.5.0)
+    ruby_http_client (3.5.2)
     rubyzip (2.3.2)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -271,6 +277,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    sendgrid-ruby (6.6.0)
+      ruby_http_client (~> 3.4)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -310,6 +318,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  activemerchant
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
@@ -330,6 +339,7 @@ DEPENDENCIES
   ratyrate
   sass-rails (~> 5.0)
   selenium-webdriver
+  sendgrid-ruby
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

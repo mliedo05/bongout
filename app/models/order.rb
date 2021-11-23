@@ -4,7 +4,6 @@ class Order < ApplicationRecord
   has_many :products,  through: :carts, dependent: :destroy
   has_many :payments, dependent: :destroy
 
-  enum status:[:created, :cancel, :payed, :complete]
 
   def add_product(product_id, quantity)
     product = Product.find(product_id)

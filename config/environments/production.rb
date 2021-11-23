@@ -64,6 +64,10 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "bongout_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+
+
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -91,4 +95,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #Paypal ActiveMerchant config
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test
+    paypal_options =
+    {
+    login: ENV["PAYPAL_LOGIN_EMAIL"],
+    password: ENV["PAYPAL_PASSWORD"],
+    signature: ENV["PAYPAL_SIGNATURE"]
+    }
+    ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
+  end
 end

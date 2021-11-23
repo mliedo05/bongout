@@ -24,6 +24,9 @@ gem 'omniauth-facebook'
 #Autenticacion con google
 gem 'omniauth-google-oauth2'
 #Metodos de pago
+gem "activemerchant"
+#confirmacionde correo
+gem 'sendgrid-ruby'
 
 
 
