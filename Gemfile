@@ -27,6 +27,8 @@ gem 'omniauth-google-oauth2'
 gem "activemerchant"
 #confirmacionde correo
 gem 'sendgrid-ruby'
+gem "chartkick"
+gem "groupdate"
 
 
 

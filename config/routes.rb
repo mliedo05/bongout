@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'graphics/index'
   get 'home/index'
   post '/rate' => 'rater#create', :as => 'rate'
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -22,5 +23,6 @@ Rails.application.routes.draw do
   resources :subcategories
   resources :categories
   root to: "home#index"
+  get 'my_graphics', to: "graphics#my_graphics"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

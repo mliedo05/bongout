@@ -1,0 +1,32 @@
+<div class="container">   
+    <h1 class="text-center">Estadisticas mensuales</h1>
+    
+    <div class="col-sm-12 my-5">
+        <div class="card">
+        <div class="card-body">
+            <h3 class="text-center"> Cantidad de compras al dia de hoy</h3>
+            <%= column_chart @diary_sales %>
+        </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card border-info mb-3">
+            <div class="card-body">
+                <h3 class="text-center"> Cantidad de compras semanales</h3>
+                <%= column_chart @weekly_sales %>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card border-info mb-3">
+            <div class="card-body">
+                <h3 class="text-center"> Cantidad de ventas mensuales</h3>
+                <%= column_chart @sales_group_by_month %>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

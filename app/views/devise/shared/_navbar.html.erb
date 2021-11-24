@@ -1,23 +1,51 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-danger">
-    <div class="my-auto cuadro ">
-        <a class="navbar-brand text-white" href="<%=root_path %>"><%=image_tag("bongout.png", class: " logo")%></a>
-    </div>
-    <div  class="ml-auto mr-2" >
-        <% if user_signed_in? %>
-          <% if @order.present? %>
-            <%= link_to (cart_path(@order)) do %>
-              <i class="fas fa-shopping-cart fa-2x text-light mr-2"></i><% end %>
-          <% end %>
-            <%= link_to (edit_user_registration_path) do %>
-              <i class="fas fa-user-cog fa-2x text-light mr-2"></i><% end %>
+  <div class="my-auto cuadro ">
+    <a class="navbar-brand text-white" href="<%=root_path %>"><%=image_tag("bongout.png", class: " logo")%></a>
+  </div>
 
-            <%= link_to (destroy_user_session_path), method: :delete do %>
-             <i class="fas fa-sign-out-alt fa-2x text-light mr-2"></i><% end %>
-        <% else %>
-            <%= link_to (new_user_session_path), method: :post do %>
-              <i class="fas fa-sign-in-alt fa-2x text-light mr-2"></i><% end %>
-            
-            <%= link_to "Singn up", new_user_registration_path, class: "btn btn-danger text-light ml-auto"%>
+  <div  class="ml-auto mr-2" >
+    <% if user_signed_in? %>
+      <% if @order.present? %>
+        <%= link_to (cart_path(@order)) do %>
+          <i class="fas fa-shopping-cart fa-2x text-light mr-2"></i><% end %>
         <% end %>
-    </div>
+        <%= link_to (edit_user_registration_path) do %>
+          <i class="fas fa-user-cog fa-2x text-light mr-2"></i>
+        <% end %>
+        <%= link_to (destroy_user_session_path), method: :delete do %>
+          <i class="fas fa-sign-out-alt fa-2x text-light mr-2"></i>
+        <% end %>
+        <div class="dropdown ml-auto ">
+          <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+            <% if current_user %>
+              Bienvenid@ <%= current_user.name %>
+            <% else %>
+              Ingresar
+            <% end %>
+          </button>
+          <div class="dropdown-menu mr-3" aria-labelledby="dropdownMenuButton">
+            <%= link_to "Ver productos", products_path, class: "dropdown-item" %>
+                <% if current_user.admin == true  %>
+                  <%= link_to 'Create Category', new_category_path, class: "dropdown-item " %>
+                  <%= link_to 'Create Subcategory', new_subcategory_path, class: "dropdown-item " %>
+                  <%= link_to 'Create Brand', new_brand_path, class: "dropdown-item " %>
+                  <%= link_to 'Crear producto', new_product_path, class: "dropdown-item " %> 
+                  <%= link_to 'Panel Admin', new_admin_user_session_path, class: "dropdown-item " %>
+                  <%= link_to 'Estadtísticas', my_graphics_path, class: "dropdown-item " %>
+                  <%= link_to 'Editar perfil', edit_user_registration_path, class: "dropdown-item" %>
+                  <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: "dropdown-item" %> 
+                <% else %>
+                  <%= link_to 'Iniciar sesión', new_user_session_path, class: "dropdown-item " %>
+                  <%= link_to 'Registrarme', new_user_registration_path, class: "dropdown-item " %>
+                <% end %>
+          </div>
+        </div>
+
+      <% else %>
+        <%= link_to (new_user_session_path), method: :post do %>
+          <i class="fas fa-sign-in-alt fa-2x text-light mr-2"></i>
+        <% end %>
+        <%= link_to "Singn up", new_user_registration_path, class: "btn btn-danger text-light ml-auto"%>
+      <% end %>
+  </div>
 </nav>
