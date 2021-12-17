@@ -6,4 +6,5 @@ class HomeController < ApplicationController
     end
     @products = Kaminari.paginate_array(@products).page(params[:page]).per(5)
   end
+
 end

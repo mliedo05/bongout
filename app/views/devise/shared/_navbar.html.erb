@@ -24,20 +24,20 @@
             <% end %>
           </button>
           <div class="dropdown-menu mr-3" aria-labelledby="dropdownMenuButton">
-            <%= link_to "Ver productos", products_path, class: "dropdown-item" %>
-                <% if current_user.admin == true  %>
-                  <%= link_to 'Create Category', new_category_path, class: "dropdown-item " %>
-                  <%= link_to 'Create Subcategory', new_subcategory_path, class: "dropdown-item " %>
-                  <%= link_to 'Create Brand', new_brand_path, class: "dropdown-item " %>
-                  <%= link_to 'Crear producto', new_product_path, class: "dropdown-item " %> 
-                  <%= link_to 'Panel Admin', new_admin_user_session_path, class: "dropdown-item " %>
-                  <%= link_to 'Estadtísticas', my_graphics_path, class: "dropdown-item " %>
-                  <%= link_to 'Editar perfil', edit_user_registration_path, class: "dropdown-item" %>
-                  <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: "dropdown-item" %> 
-                <% else %>
-                  <%= link_to 'Iniciar sesión', new_user_session_path, class: "dropdown-item " %>
-                  <%= link_to 'Registrarme', new_user_registration_path, class: "dropdown-item " %>
-                <% end %>
+            <% if current_user.admin == true  %>
+              <%= link_to "Ver productos", products_path, class: "dropdown-item" %>
+              <%= link_to 'Create Category', new_category_path, class: "dropdown-item " %>
+              <%= link_to 'Create Subcategory', new_subcategory_path, class: "dropdown-item " %>
+              <%= link_to 'Create Brand', new_brand_path, class: "dropdown-item " %>
+              <%= link_to 'Crear producto', new_product_path, class: "dropdown-item " %> 
+              <%= link_to 'Panel Admin', new_admin_user_session_path, class: "dropdown-item " %>
+              <%= link_to 'Estadtísticas', my_graphics_path, class: "dropdown-item " %>
+              <%= link_to 'Editar perfil', edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: "dropdown-item" %> 
+            <% else %>
+              <%= link_to 'Editar perfil', edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: "dropdown-item" %> 
+            <% end %>
           </div>
         </div>
 
