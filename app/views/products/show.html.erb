@@ -45,5 +45,7 @@ Price  : <%= rating_for @product, "price", star: 10, disable_after_rate: true %>
   <strong>Brand:</strong>
   <%= @product.brand %>
 </p>
-<%= link_to 'Edit', edit_product_path(@product) %> |
+<% if current_user.admin == true  %>
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+<% end %>
 <%= link_to 'Back', products_path %>
